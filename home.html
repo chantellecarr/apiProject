@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="API test" />
+<meta name="keywords" content="currency,api" />
+<meta name="revised" content="Chantelle Carr, 30/03/2019" />
+<title> API test </title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen">
+<script type="text/javascript" src="../js/formMethods.js"></script> 
+</head>
+<body onLoad="populateInitCurrType();">
+<section>
+<h1>API test</h1>
+<p>Please fill in the form below</p>
+<form method="get" action="../src/home.php">
+<fieldset>
+<legend>API Type</legend>
+<label><input type="radio" name="apiAction" value="live" onclick="hideElement();"> Recent exchange rate data </label>
+<label><input type="radio" name="apiAction" value="historical" onclick="hideElement();"> Historical exchange rates for a specific day </label>
+<label><input type="radio" name="apiAction" value="convert" onclick="showElement();" checked> Convert one currency to another</label>
+<label><input type="radio" name="apiAction" value="timeframe" onclick="hideElement();"> Request exchange rates for a specific period of time </label>
+</fieldset>
+<div id="currAmount">
+<label>Enter amount: <input type="number" name="initCurrValue" placeholder="10.00" autofocus required></label>
+</div>
+<label>Enter currency type: <select id="initCurrTypeId" name="initCurrType" required></select></label>
+<label>Enter currency type to convert to: <select id="finalCurrTypeId" name="finalCurrType" required multiple>
+<option selected>GBP
+<option value="EUR">Euro
+<option value="USD">US Dollars
+</select>
+</label>
+<input type="submit" class="button buttonSubmit" value="Submit">
+<input type="reset" class="button buttonClear" value="Clear">
+</form> 
+</section>
+</body>
+</html>
